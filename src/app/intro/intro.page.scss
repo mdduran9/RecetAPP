@@ -3,18 +3,26 @@ swiper-container {
     height: 100%;
 }
 swiper-slide {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: aqua;
+  background-color: rgb(255, 255, 255);
 }
 .title1 {
-  color: red;
+  color: rgb(173, 76, 1);
+  font-size: 1.5rem;
+}
+
+.description1 {
+  color: black;
+  font-size: 1.2rem;
+  margin-top: 30px;
 }
 
 .bg-color-slide {
-  background-color: magenta;
+  background-color: rgb(247, 247, 247);
 }
 
 .close-icon {
