@@ -8,8 +8,8 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
-background-color: rgb(255, 255, 255);
 }
+
 .title1 {
 color: rgb(173, 76, 1);
 font-size: 1.5rem;
@@ -25,6 +25,27 @@ font-weight: bold;
 .bg-color-slide {
 background-color: rgb(247, 247, 247);
 }
+
+.title2 {
+  color: rgb(242, 240, 239);
+  font-size: 1rem;
+  text-align: center;
+  justify-content:center;
+  }
+
+.bg-color-slide2 {
+  background-color: rgb(239, 109, 3);
+  border-width: 10px;
+  border-style: solid;
+  border-color: rgb(250, 248, 248);
+  }
+
+  .bg-color-slide3 {
+    background-color: rgb(255, 255, 255);
+    }
+  .bg-color-slide4 {
+    background: linear-gradient(rgb(239, 109, 3), rgb(233, 37, 2));
+    }
 
 .close-icon {
 position: absolute;
