@@ -21,10 +21,18 @@
       </ng-container>
     </div>
     <ion-item>
-      <ion-input type="password" label="Password" value="$Mg124jyg">
+      <ion-input type="password" label="Password" value="$Mg124jyg" formControlName="password">
         <ion-input-password-toggle slot="end"></ion-input-password-toggle>
       </ion-input>
     </ion-item>
+    <div>
+      <ng-container *ngFor="let error of formErrors.password">
+        <ion-label color="danger" 
+        *ngIf="(loginForm.get('password')?.hasError(error.type) && loginForm.get('password')?.dirty)">
+        {{ errorMessage }}
+        </ion-label>
+      </ng-container>
+    </div>
     <p></p>
     <p></p>
     <ion-button

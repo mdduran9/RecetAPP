@@ -17,6 +17,10 @@ export class LoginPage implements OnInit {
     email: [
       { type: 'required', message:'El correo es obligatorio'},
       { type: 'email', message:'El correo no es valido'}
+    ],
+    password: [
+      { type: 'required', message:'La contraseña es obligatoria'},
+      { type: 'password', message:'La contraseña es de minimo 6 caracteres'}
     ]
   }
   constructor(
