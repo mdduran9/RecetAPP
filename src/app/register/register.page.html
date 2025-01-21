@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="registerForm">
+    <ion-item>
+      <ion-input label="Nombre" placeholder="Enter text" formControlName="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Apellido" placeholder="Enter text" formControlName="lastname"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Email" labelPlacement="floating" placeholder="example@email.com" formControlName="email"></ion-input>
+    </ion-item>
+    <ng-container *ngFor="let error of formErrors.email">
+        <ion-label color="danger" 
+        *ngIf="(registerForm.get('email')?.hasError(error.type) && registerForm.get('email')?.dirty)" >
+        {{ error.message}}
+      </ion-label>
+      </ng-container>
+    <ion-item>
+      <ion-input type="password" label="Contraseña" placeholder="minimo 6 caracteres" formControlName="password">
+        <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+      </ion-input>
+    </ion-item>
+    <ng-container *ngFor="let error of formErrors.password">
+      <ion-label color="danger" 
+      *ngIf="(registerForm.get('password')?.hasError(error.type) && registerForm.get('password')?.dirty)">
+      {{ errorMessage }}
+      </ion-label>
+    </ng-container>
+    <ion-item>
+      <ion-input type="password-confirmation" label="Confirmar Contraseña" placeholder="minimo 6 caracteres" formControlName="password">
+        <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+      </ion-input>
+    </ion-item>
+  </form>
+  
+</ion-content>
