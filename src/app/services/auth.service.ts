@@ -13,7 +13,7 @@ export class AuthService {
       // Validación del email
       if (credentials.email === 'moises@gmail.com') {
         // Validación de la contraseña
-        if (credentials.password === '$Moises91') {
+        if (credentials.password === 'Moises91') {
           accept('Login correcto');
         } else {
           reject('Contraseña incorrecta');
