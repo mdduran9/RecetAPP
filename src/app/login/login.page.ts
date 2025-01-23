@@ -46,10 +46,11 @@ export class LoginPage implements OnInit {
   ngOnInit() {
   }
 
-  loginUser (credentials: any){
-    this.authService.login(credentials).then(res=> {
+  loginuser (credentials: any){
+    this.errorMessage = ''; // Limpia cualquier mensaje de error previo
+    this.authService.loginuser( credentials ).then(res=> {
       console.log(res);
-      this.errorMessage = '';
+      this.errorMessage = 'El correo o la contraseña son incorrectos.';
       this.storage.set ('isUserLoggedIn', true);
       this.navCtrl.navigateForward('/intro');
     }).catch(err =>{
