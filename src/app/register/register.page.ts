@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
+import { AuthService } from '../services/auth.service';
+import { NavController } from '@ionic/angular';
+import { Storage } from '@ionic/storage-angular';
+import {Router} from '@angular/router'; //IMPORTAMOS EL ROUTER
 
 
 @Component({
@@ -37,7 +41,10 @@ export class RegisterPage implements OnInit {
   }
 
   constructor(
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private storage: Storage,
+    private navCtrl: NavController,
+    private authService: AuthService,
   ) { 
     this.registerForm= this.formBuilder.group({
       name: new FormControl('', Validators.required),
@@ -73,7 +80,15 @@ export class RegisterPage implements OnInit {
   }
 
   registerUser (registerData:any){
-    console.log(registerData, "Datos del registro")
+    this.errorMessage = ''; // Limpia cualquier mensaje de error previo
+    this.authService.register( registerData ).then(res=> {
+      console.log(res);
+      this.errorMessage = '';
+      this.storage.set ('isUserLoggedIn', true);
+      this.navCtrl.navigateForward('/login');
+    }).catch(err =>{
+      this.errorMessage = err;
+    });
   }
 
 }
