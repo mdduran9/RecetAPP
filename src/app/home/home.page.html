@@ -6,6 +6,24 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  Hola soy el Home
+  <ion-list>
+    <ion-card *ngFor="let post of posts">
+      <img src="{{post.image}}" class="image-posts">
+      <ion-card-header>
+        <ion-card-subtitle>
+          <ion-avatar class ="user-avatar">
+            <img 
+            [src]="post.user.image ? post.user.image : 'assets/imgs/perfil.png'"
+            >
+          </ion-avatar>
+          <p></p>
+          {{post.user.name}}
+        </ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        {{post.description}}
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
 </ion-content>
 
