@@ -8,6 +8,8 @@ import { AccountPageRoutingModule } from './account-routing.module';
 
 import { AccountPage } from './account.page';
 
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core'; //IMPORTAMOS EL CUSTOM_ELEMENTS_SCHEMA PARA QUE NO NOS DE ERROR EN EL HTML
+
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +17,7 @@ import { AccountPage } from './account.page';
     IonicModule,
     AccountPageRoutingModule
   ],
-  declarations: [AccountPage]
+  declarations: [AccountPage],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA] //AÑADIMOS EL CUSTOM_ELEMENTS_SCHEMA
 })
 export class AccountPageModule {}

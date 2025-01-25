@@ -5,10 +5,21 @@
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-
-<ion-content>
-  <ion-title>{{user_data.name}} {{user_data.last_name}}</ion-title>
-  <p>usuario: {{user_data.username}}</p>
-  <p>Seguidores: {{user_data.followed_users.lenght}}</p>
-  <p>Siguiendo: {{user_data.following_users.lenght}}</p>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{user_data.name}} {{user_data.last_name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="white-background">
+  <swiper-container>
+    <swiper-slide>
+      <div class="profile-container">
+        <img [src]="user_data.image ? user_data.image : 'assets/imgs/perfil.png'" class="image-post" />
+        <p><strong>Usuario:</strong> {{user_data.username}}</p>
+        <p><strong>Seguidores:</strong> {{user_data.followed_users?.length || 0}}</p>
+        <p><strong>Siguiendo:</strong> {{user_data.following_users?.length || 0}}</p>
+      </div>
+    </swiper-slide>
+  </swiper-container>
 </ion-content>
+

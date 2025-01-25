@@ -13,16 +13,6 @@ export class UserService {
 
   getUser(id: any){
     return new Promise ((accept, reject)=> {
-      let params = {
-        "user":{
-          "email": id.email,
-          "password": id.password,
-          "confirm_password": id.confirm_password,
-          "name": id.name,
-          "lastname": id.lastname,
-          "username": id.username
-        }
-      }
       const options = { headers: this.httpHeaders };
       this.http.get(`${this.urlServer}/current_user/${id}`, options).subscribe(
         (data: any) =>{
