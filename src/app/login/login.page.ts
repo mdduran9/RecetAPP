@@ -48,9 +48,10 @@ export class LoginPage implements OnInit {
 
   loginuser (credentials: any){
     this.errorMessage = ''; // Limpia cualquier mensaje de error previo
-    this.authService.loginuser( credentials ).then(res=> {
+    this.authService.loginuser( credentials ).then((res:any) => {
       console.log(res);
       this.errorMessage = 'El correo o la contraseña son incorrectos.';
+      this.storage.set ('user', res.user);
       this.storage.set ('isUserLoggedIn', true);
       this.navCtrl.navigateForward('/intro');
     }).catch(err =>{
