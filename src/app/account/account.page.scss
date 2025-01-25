@@ -1,14 +1,15 @@
 .profile-container {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Para que ocupe toda la altura disponible */
     margin-top: 20px;
   }
   
-  .image-post {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    margin-bottom: 20px;
+  .center-content {
+    text-align: center; /* Centra el texto e imágenes dentro del contenedor */
   }
+  
   
   p {
     margin: 5px 0;
@@ -21,4 +22,10 @@
     --ion-background-color: #ffffff; /* Garantiza que las propiedades de Ionic también adopten este color */
     padding: 0;
     margin: 0;
+  }
+
+  ion-avatar {
+    width: 90px; /* Tamaño del avatar */
+    height: 90px;
+    margin: 0 auto; /* Centra horizontalmente */
   }

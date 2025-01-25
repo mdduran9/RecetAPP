@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
 import { Storage } from '@ionic/storage-angular';
+import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
+import { defineCustomElements} from '@ionic/pwa-elements/loader';
+defineCustomElements(window);
 @Component({
   selector: 'app-account',
   templateUrl: './account.page.html',
@@ -36,4 +39,27 @@ export class AccountPage implements OnInit {
     });
   }
 
+  async takePhoto(){
+    console.log('Tomando foto...');
+    const capturePhoto = await Camera.getPhoto({
+      resultType: CameraResultType.Uri,
+      source: CameraSource.Camera,
+      //source: CameraSource.photo  buscar imagen de la biblioteca
+      quality: 100
+    });
+
+   console.log('Foto capturada:', capturePhoto.webPath);
+    this.user_data.image = capturePhoto.webPath || capturePhoto.dataUrl;
+    this.update();
+  }
+
+  async update(){
+    this.userService.updateUser(this.user_data).then(
+      (data:any)=>{
+      console.log(data);
+    },
+    ).catch(error =>{
+      console.log(error);
+    });
+  }
 }

@@ -14,10 +14,17 @@
   <swiper-container>
     <swiper-slide>
       <div class="profile-container">
-        <img [src]="user_data.image ? user_data.image : 'assets/imgs/perfil.png'" class="image-post" />
-        <p><strong>Usuario:</strong> {{user_data.username}}</p>
-        <p><strong>Seguidores:</strong> {{user_data.followed_users?.length || 0}}</p>
-        <p><strong>Siguiendo:</strong> {{user_data.following_users?.length || 0}}</p>
+        <!-- Contenedor para centrar el contenido -->
+        <div class="center-content">
+          <ion-avatar (click)="takePhoto()">
+            <img [src]="user_data.image ? user_data.image : 'assets/imgs/perfil.png'" />
+          </ion-avatar>
+          <p></p>
+          <p></p>
+          <p><strong>Usuario:</strong> {{user_data.username}}</p>
+          <p><strong>Seguidores:</strong> {{user_data.followed_users?.length || 0}}</p>
+          <p><strong>Siguiendo:</strong> {{user_data.following_users?.length || 0}}</p>
+        </div>
       </div>
     </swiper-slide>
   </swiper-container>

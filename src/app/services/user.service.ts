@@ -32,4 +32,32 @@ export class UserService {
       )
     });
   }
+
+
+  updateUser(user : any){
+    const user_params = {
+      user:user
+    }
+    return new Promise ((accept, reject)=> {
+      const options = { headers: this.httpHeaders };
+      this.http.post(`${this.urlServer}/update/${user.id}`,user_params, options).subscribe(
+        (data: any) =>{
+          console.log(data, 'data');
+          accept(data);
+        },
+        (error)=>{
+          console.log(error);
+          if (error.status==422){
+            reject('');
+          } else if (error.status==500){
+              reject('Error por favor intente mas tarde');
+          }else{
+              reject('Error al actualizar al usuario');
+          }
+        }
+      )
+    });
+
+  }
+
 }
