@@ -1,25 +1,43 @@
-swiper-container {
-  width: 100%;
-  height: 100%;
-}
-swiper-slide {
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-background-color: rgb(240, 141, 3);
-}
-
-.content-home{
-  background-color: rgb(240, 141, 3);
-}
 
 .user-avatar{
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 2px solid #fff;  /* Agregar borde blanco */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
 .image-posts{
   margin: 0 auto;
   display: block;
+}
+
+ion-fab {
+  ion-fab-button{
+    --background:  rgb(240, 141, 3);
+    --color: rgb(250, 250, 250);
+  }
+}
+
+ion-card {
+  margin: 16px;
+  padding: 16px;
+  background: hsl(33, 48%, 95%);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Añadir sombra para profundidad */
+}
+
+ion-card-content {
+  font-size: 14px; /* Ajuste del tamaño del texto */
+  color: #6b6b6b;
+}
+
+
+ion-list{
+  background: #f8f8f8;
+}
+
+ion-card-header p {
+  font-size: 12px;
+  font-weight: bold;
 }
