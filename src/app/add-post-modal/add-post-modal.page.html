@@ -6,7 +6,7 @@
 
 <ion-content>
   
-  <form [formGroup]="addPostForm" (ngsubmit)="addPost(addPostForm.value)">
+  <form [formGroup]="addPostForm" (ngSubmit)="addPost(addPostForm.value)">
     <div (click)="uploadPhone()">
       <img [src]="post_image ? post_image : '/assets/imgs/placeholders.jpg'" class="image-post">
       <p *ngIf="!post_image">haz click para subir una imagen</p>

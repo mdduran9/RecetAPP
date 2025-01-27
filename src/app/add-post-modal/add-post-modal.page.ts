@@ -59,7 +59,7 @@ export class AddPostModalPage implements OnInit {
     const post_params = {
       post: {
         description: post_data.description,
-        image: post_data.image, // Esto es lo que deberías enviar a tu API
+        image: post_data.image,
         user_id: user.id
       }
       

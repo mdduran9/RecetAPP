@@ -42,14 +42,14 @@ export class AccountPage implements OnInit {
   async takePhoto(){
     console.log('Tomando foto...');
     const capturePhoto = await Camera.getPhoto({
-      resultType: CameraResultType.Uri,
+      resultType: CameraResultType.DataUrl,
       source: CameraSource.Camera,
       //source: CameraSource.photo  buscar imagen de la biblioteca
       quality: 100
     });
 
-   console.log('Foto capturada:', capturePhoto.webPath);
-    this.user_data.image = capturePhoto.webPath || capturePhoto.dataUrl;
+   console.log('Foto capturada:', capturePhoto.dataUrl);
+    this.user_data.image = capturePhoto.dataUrl;
     this.update();
   }
 
