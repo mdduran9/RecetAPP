@@ -4,12 +4,12 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <figure class="text-center">
+<ion-content class="src/app/login/login.page.scss">
+  <figure class="text-center" class="figura">
     <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
   </figure>
   <form [formGroup]="loginForm" (ngSubmit)="loginuser(loginForm.value)">
-    <ion-item>
+    <ion-item color="white">
       <ion-input label="Email" labelPlacement="floating" placeholder="example@email.com" formControlName="email"></ion-input>
     </ion-item>
     <div>
@@ -20,7 +20,7 @@
         </ion-label>
       </ng-container>
     </div>
-    <ion-item>
+    <ion-item color="white">
       <ion-input type="password" label="Contraseña" placeholder="minimo 6 caracteres" formControlName="password">
         <ion-input-password-toggle slot="end"></ion-input-password-toggle>
       </ion-input>
@@ -39,11 +39,15 @@
       type="submit"
       [disabled]="!loginForm.valid"
       expand="block"
+      class="boton-naranja"
       >Ingresar
     </ion-button>
   </form> 
   <p></p>
   <p></p>
-  <ion-button (click)="finish()" expand="block">Registro</ion-button>
+  <ion-button (click)="finish()" expand="block"  class="boton-naranja">Registro</ion-button>
   <p>{{errorMessage}}</p>
 </ion-content>
+<footer class="app-footer">
+  <p>RecetApp</p>
+</footer>

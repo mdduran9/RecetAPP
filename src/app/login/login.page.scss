@@ -1,0 +1,66 @@
+.boton-naranja {
+    --background: rgb(240, 141, 3); /* Color de fondo naranja */
+    --color: white; /* Color de texto blanco */
+    --border-radius: 8px; /* Bordes redondeados */
+  }
+
+ion-content {
+    --background: #ffffff; /* Fondo blanco */
+  }
+
+  .figura {
+    text-align: center; /* Centrado horizontal de la imagen */
+    margin-bottom: 20px; /* Espacio inferior */
+  }
+  
+  .figura img {
+    width: 120px; /* Tamaño de la imagen */
+    height: 120px; /* Tamaño de la imagen */
+    border-radius: 50%; /* Bordes redondeados para hacerla circular */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    border: 2px solid #ff6600; /* Borde naranja alrededor de la imagen */
+    object-fit: cover; /* Ajuste para que la imagen no se distorsione */
+  }
+
+ion-item {
+    margin-bottom: 16px; /* Espacio entre los campos */
+    border-bottom: 2px solid rgb(240, 141, 3); /* Línea de separación naranja */
+    width: auto; /* Se ajusta al contenido del item */
+}
+
+ion-input {
+    --padding-start: 16px;
+    --padding-end: 16px;
+    color: #040404;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombreado sutil */
+    border-radius: 8px; /* Bordes redondeados */
+  }
+  
+  ion-label {
+    font-size: 14px;
+  }
+  
+  ion-button {
+    margin-top: 16px; /* Espacio entre los botones */
+  }
+
+  .form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    width: 300px;
+  }
+
+  .app-footer {
+    text-align: center; /* Centrado del texto */
+    padding: 20px; /* Espacio interno */
+    background-color: rgb(240, 141, 3); /* Fondo naranja */
+    color: white; /* Texto blanco */
+    font-size: 18px; /* Tamaño de texto */
+    font-weight: bold; /* Texto en negrita */
+    border-top: 2px solid #ffffff; /* Línea superior blanca */
+    position: fixed;
+    width: 100%; /* Asegura que ocupe todo el ancho */
+    bottom: 0; /* Lo coloca en la parte inferior */
+  }
