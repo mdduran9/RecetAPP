@@ -12,10 +12,10 @@ export class PostService {
     private http: HttpClient 
   ) { }
 
-  getPosts(){
+  getPosts(page:number, perPage:number){
     return new Promise ((accept, reject)=> {
       const options = { headers: this.httpHeaders };
-      this.http.get(`${this.urlServer}/posts`, options).subscribe(
+      this.http.get(`${this.urlServer}/posts?page=${page}&per_page=${perPage}`, options).subscribe(
         (data: any) =>{
           console.log(data, 'data');
           accept(data);
@@ -23,11 +23,11 @@ export class PostService {
         (error)=>{
           console.log(error);
           if (error.status==422){
-            reject('Usuario o contraseña incorrectos');
+            reject('Parámetros incorrectos para obtener los posts.');
           } else if (error.status==500){
-              reject('Error por favor intente mas tarde');
+            reject('Error del servidor. Intenta de nuevo más tarde.');
           }else{
-              reject('Error al intenter iniciar sesion');
+            reject('Error desconocido al intentar obtener los posts.');
           }
         }
       )
