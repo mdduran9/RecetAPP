@@ -29,6 +29,10 @@ const routes: Routes = [
     path: 'add-post-modal',
     loadChildren: () => import('./add-post-modal/add-post-modal.module').then( m => m.AddPostModalPageModule)
   },
+  {
+    path: 'update-user-modal',
+    loadChildren: () => import('./update-user-modal/update-user-modal.module').then( m => m.UpdateUserModalPageModule)
+  },
   
 ];
 

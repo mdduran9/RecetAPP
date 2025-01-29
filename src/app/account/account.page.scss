@@ -8,6 +8,7 @@
   
   .center-content {
     text-align: center; /* Centra el texto e imágenes dentro del contenedor */
+    color:black;
   }
   
   
@@ -28,4 +29,13 @@
     width: 90px; /* Tamaño del avatar */
     height: 90px;
     margin: 0 auto; /* Centra horizontalmente */
+  }
+
+  ion-fab-button{
+    --background:  rgb(240, 141, 3);
+    --color: rgb(250, 250, 250);
+    width: 60px; /* Tamaño del botón */
+    height: 60px; /* Tamaño del botón */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para efecto elevado */
+    border-radius: 50%; /* Asegurar que sea completamente redondo */
   }

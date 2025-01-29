@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
 import { Storage } from '@ionic/storage-angular';
+import { ModalController } from '@ionic/angular';
 import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
 import { defineCustomElements} from '@ionic/pwa-elements/loader';
+import { UpdateUserModalPage } from '../update-user-modal/update-user-modal.page';
 defineCustomElements(window);
 @Component({
   selector: 'app-account',
@@ -22,7 +24,8 @@ export class AccountPage implements OnInit {
   };
   constructor(
     private userService: UserService,
-    private storage: Storage
+    private storage: Storage,
+    private modalController: ModalController
   ) { }
 
   async ngOnInit() {
@@ -62,4 +65,13 @@ export class AccountPage implements OnInit {
       console.log(error);
     });
   }
+  async updatePerfil(){
+    console.log('Editar perfil');
+    const modal = await this.modalController.create({
+      component: UpdateUserModalPage,
+      componentProps:{}
+    });
+    return await modal.present();
+  }
+  
 }

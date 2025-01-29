@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Editar perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ 
+  <form [formGroup]="updatePostForm" (ngSubmit)="updateUser(updatePostForm.value)">
+    <div (click)="uploadPhone()">
+      <img [src]="post_image ? post_image : '/assets/imgs/placeholders.jpg'" class="image-post">
+      <p *ngIf="!post_image">haz click para subir una imagen</p>
+    </div>
+    <!-- Campo Nombre -->
+    <ion-item>
+      <ion-input label="Nombre" placeholder="Enter text" formControlName="name"></ion-input>
+    </ion-item>
+     <!-- Campo Apellido -->
+    <ion-item>
+      <ion-input label="Apellido" placeholder="Enter text" formControlName="lastname"></ion-input>
+    </ion-item>
+    <ion-footer>
+      <!-- Boton de Publicar -->
+      <ion-button
+      type="submit"
+      [disabled]="!updatePostForm.valid"
+      expand="full"
+      >
+      Guardar
+      </ion-button>
+    </ion-footer>
+  </form>
+ 
+
+</ion-content>
