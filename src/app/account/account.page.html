@@ -1,5 +1,6 @@
 <ion-header>
   <ion-toolbar>
+    <ion-title>Mi perfil</ion-title>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
@@ -19,8 +20,8 @@
           <p></p>
           <p></p>
           <p><strong>Usuario:</strong> {{user_data.username}}</p>
-          <p><strong>Seguidores:</strong> {{user_data.followed_users?.length || 0}}</p>
-          <p><strong>Siguiendo:</strong> {{user_data.following_users?.length || 0}}</p>
+          <p><strong>Seguidores:</strong> {{user_data.followers.length}}</p>
+          <p><strong>Siguiendo:</strong> {{user_data.followees.length}}</p>
         </div>
       </div>
     </swiper-slide>

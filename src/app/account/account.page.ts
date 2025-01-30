@@ -5,6 +5,7 @@ import { ModalController } from '@ionic/angular';
 import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
 import { defineCustomElements} from '@ionic/pwa-elements/loader';
 import { UpdateUserModalPage } from '../update-user-modal/update-user-modal.page';
+
 defineCustomElements(window);
 @Component({
   selector: 'app-account',
@@ -15,12 +16,10 @@ defineCustomElements(window);
 export class AccountPage implements OnInit {
   user_data: any={
     name:'',
-    last_name:'',
     email:'',
     image:'', 
-    username:'',
-    followed_users:[],
-    following_users:[]
+    followees: [],
+    followers: []
   };
   constructor(
     private userService: UserService,
@@ -33,7 +32,7 @@ export class AccountPage implements OnInit {
     console.log(user,'Usuario');
     this.userService.getUser(user.id).then(
       (data:any)=>{
-      console.log('data');
+      console.log(data);
       this.storage.set('user',data); //Se actualizan los datos cada vez que se entre a la pagina de la cuenta
       this.user_data = data;
     },
