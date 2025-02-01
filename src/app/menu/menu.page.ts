@@ -31,14 +31,14 @@ export class MenuPage implements OnInit {
   }
 
   account(){
-    this.navCtrl.navigateRoot("/account"); // Ir al Perfil
+    this.navCtrl.navigateRoot("menu/account"); // Ir al Perfil
   }
 
   inicio(){
-    this.navCtrl.navigateRoot("/home"); // Ir al Inicio
+    this.navCtrl.navigateRoot("menu/home"); // Ir al Inicio
   }
 
   search_user(){
-    this.navCtrl.navigateRoot("/search-users"); // Busqueda de usuario
+    this.navCtrl.navigateRoot("menu/search-users"); // Busqueda de usuario
   }
 }

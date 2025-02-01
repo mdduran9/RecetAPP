@@ -23,6 +23,10 @@ const routes: Routes = [
         loadChildren: () =>
          import('../search-users/search-users.module').then( m => m.SearchUsersPageModule)
       },
+      {
+        path: 'update-user-modal',
+        loadChildren: () => import('../update-user-modal/update-user-modal.module').then( m => m.UpdateUserModalPageModule)
+      },
     ]
   }
 ];

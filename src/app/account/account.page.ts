@@ -5,6 +5,7 @@ import { ModalController } from '@ionic/angular';
 import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
 import { defineCustomElements} from '@ionic/pwa-elements/loader';
 import { UpdateUserModalPage } from '../update-user-modal/update-user-modal.page';
+import { AlertController } from '@ionic/angular';
 
 defineCustomElements(window);
 @Component({
@@ -24,7 +25,8 @@ export class AccountPage implements OnInit {
   constructor(
     private userService: UserService,
     private storage: Storage,
-    private modalController: ModalController
+    private modalController: ModalController,
+    public alertController: AlertController
   ) { }
 
   async ngOnInit() {
@@ -41,12 +43,11 @@ export class AccountPage implements OnInit {
     });
   }
 
-  async takePhoto(){
+  async takePhoto(source: CameraSource) {
     console.log('Tomando foto...');
     const capturePhoto = await Camera.getPhoto({
       resultType: CameraResultType.DataUrl,
-      source: CameraSource.Camera,
-      //source: CameraSource.photo  buscar imagen de la biblioteca
+      source: source,
       quality: 100
     });
 
@@ -71,6 +72,35 @@ export class AccountPage implements OnInit {
       componentProps:{}
     });
     return await modal.present();
+  }
+
+  async presentPhotoOptions() {
+    const alert = await this.alertController.create({
+      header: "Seleccione una opción",
+      message: "¿De dónde desea obtener la imagen?",
+      buttons:[
+        {
+          text: "Cámara",
+          handler: () => {
+            this.takePhoto(CameraSource.Camera);
+          }
+        },
+        {
+          text: "Galería",
+          handler: () => {
+            this.takePhoto(CameraSource.Photos);
+          }
+        },
+        {
+          text: "Cancelar",
+          role: "cancel",
+          handler: () => {
+            console.log('Cancelado');
+          }
+        }
+      ]
+    });
+    await alert.present();
   }
   
 }

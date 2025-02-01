@@ -14,6 +14,7 @@ export class HomePage {
   page: number =1;
   limit: number = 10;
   hasMore: boolean = true;
+  isLoading: boolean = false;
   constructor(
     private postService: PostService,
     private modalController: ModalController
@@ -22,6 +23,9 @@ export class HomePage {
   ngOnInit(){
     console.log('Init Home');
     this.loadPost();
+    this.postService.postCreated.subscribe((newPost: any)=>{
+      this.posts.unshift(newPost);
+    })
   }
 
   async addPost(){
@@ -35,6 +39,7 @@ export class HomePage {
   
   loadPost(event?: any){
     console.log('Cargando más publicaciones...');
+    this.isLoading = true;
     this.postService.getPosts(this.page, this.limit).then(
       (data: any)=>{
         console.log('Nuevas publicaciones:');
@@ -45,12 +50,14 @@ export class HomePage {
           console.log('No hay más publicaciones disponibles.');
           this.hasMore = false;
         }
+        this.isLoading = false;
         if (event) {
           event.target.complete();
         }
       },
       (error)=>{
         console.log(error);
+        this.isLoading = false;
         if (event){
           event.target.complete();
           this.hasMore = false;

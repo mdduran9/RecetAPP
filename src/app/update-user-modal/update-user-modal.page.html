@@ -5,31 +5,49 @@
 </ion-header>
 
 <ion-content>
- 
-  <form [formGroup]="updatePostForm" (ngSubmit)="updateUser(updatePostForm.value)">
-    <div (click)="uploadPhone()">
-      <img [src]="post_image ? post_image : '/assets/imgs/placeholders.jpg'" class="image-post">
-      <p *ngIf="!post_image">haz click para subir una imagen</p>
-    </div>
-    <!-- Campo Nombre -->
-    <ion-item>
-      <ion-input label="Nombre" placeholder="Enter text" formControlName="name"></ion-input>
-    </ion-item>
-     <!-- Campo Apellido -->
-    <ion-item>
-      <ion-input label="Apellido" placeholder="Enter text" formControlName="lastname"></ion-input>
-    </ion-item>
-    <ion-footer>
-      <!-- Boton de Publicar -->
-      <ion-button
-      type="submit"
-      [disabled]="!updatePostForm.valid"
-      expand="full"
-      >
-      Guardar
-      </ion-button>
-    </ion-footer>
-  </form>
- 
+  <form [formGroup]="updateAccountForm" (ngSubmit)="updateUser(updateAccountForm.value)">
 
+    <div class="profile-header" style="text-align: center; margin-bottom: 20px;">
+      <ion-avatar (click)="presentPhotoOptions()" style="width: 120px; height: 120px; margin: 0 auto;">
+        <img [src]="user_data.image ? user_data.image : 'assets/imgs/perfil.png'" />
+      </ion-avatar>
+  
+    </div>
+    
+
+    <ion-item>
+      <ion-input label="Email"  labelPlacement="floating" placeholder="example@gmail.com" formControlName="email">
+      </ion-input>
+    </ion-item>
+    <ng-container *ngFor="let error of formErrors.email">
+      <ion-label color="danger" 
+       *ngIf="(updateAccountForm.get('email')?.hasError(error.type) && updateAccountForm.get('email')?.dirty)">{{error.message}}</ion-label>
+    </ng-container>
+
+
+    <ion-item>
+      <ion-input label="Name" labelPlacement="floating" placeholder="Name" formControlName="name">
+      </ion-input>
+    </ion-item>
+    <ng-container *ngFor="let error of formErrors.name">
+      <ion-label color="danger" 
+       *ngIf="(updateAccountForm.get('name')?.hasError(error.type) && updateAccountForm.get('name')?.dirty)">{{error.message}}</ion-label>
+    </ng-container>
+
+    <ion-item>
+      <ion-input label="Last name" labelPlacement="floating" placeholder="Last Name" formControlName="lastname">
+      </ion-input>
+    </ion-item>
+    <ng-container *ngFor="let error of formErrors.lastname">
+      <ion-label color="danger" 
+       *ngIf="(updateAccountForm.get('lastname')?.hasError(error.type) && updateAccountForm.get('lastname')?.dirty)">{{error.message}}</ion-label>
+    </ng-container>
+
+
+
+    <ion-button expand="full" type="submit" [disabled]="updateAccountForm.invalid">Update</ion-button>
+    
+    
+
+  </form>
 </ion-content>
