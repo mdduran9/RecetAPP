@@ -3,7 +3,7 @@ import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera
 import { defineCustomElements} from '@ionic/pwa-elements/loader';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Storage } from '@ionic/storage-angular';
-import { AlertController, ModalController } from '@ionic/angular';
+import { AlertController, ModalController, NavController } from '@ionic/angular';
 import { UserService } from '../services/user.service';
 
 defineCustomElements(window);
@@ -44,7 +44,8 @@ export class UpdateUserModalPage implements OnInit {
      private userService: UserService,
      public alertController: AlertController,
      private storage: Storage,
-     private modalController: ModalController
+     private modalController: ModalController,
+     private navCtrl: NavController,
    ) { 
 
     
@@ -63,15 +64,21 @@ export class UpdateUserModalPage implements OnInit {
      
    }
 
+   goBack() {
+    console.log('Regresa');
+    this.modalController.dismiss();  // Cierra el modal
+    this.navCtrl.navigateRoot('menu/account');  // Navega hacia la cuenta
+    console.log('');
+  }
+
   async ngOnInit() {
 
     let user: any = await this.storage.get("user");
 
     this.user_data = user;
 
-    this.updateUserView(user)
+    this.updateUserView(user);
 
-   
   }
 
   private updateUserView(user:any){
@@ -121,12 +128,6 @@ export class UpdateUserModalPage implements OnInit {
     console.log(capturedPhoto.dataUrl);
     this.user_data.image = capturedPhoto.dataUrl;
   
-  }
-  
-  async update() {
- 
-    
-      
   }
 
 

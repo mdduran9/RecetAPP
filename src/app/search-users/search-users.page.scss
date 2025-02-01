@@ -1,0 +1,78 @@
+/* Fondo blanco para la página */
+ion-content {
+    --background: #ffffff; /* Fondo blanco */
+  }
+  
+  /* Estilos del header */
+  ion-header {
+    --background: rgb(240, 141, 3); /* Naranja */
+    color: #ffffff; /* Texto blanco */
+  }
+  
+  ion-toolbar {
+    --background: rgb(240, 141, 3); /* Naranja */
+  }
+  
+  /* Estilos del título en el header */
+  ion-title {
+    color: #ffffff; /* Título blanco */
+  }
+  
+  /* Botón del menú en el header */
+  ion-menu-button {
+    color: #ffffff; /* Botón del menú blanco */
+  }
+  
+  /* Estilo del searchbar */
+  ion-searchbar {
+    --background: #ffffff; /* Fondo blanco */
+    --placeholder-color: rgb(240, 141, 3); /* Placeholder en naranja */
+    --color: rgb(240, 141, 3); /* Texto en naranja */
+    margin: 10px 0; /* Espaciado */
+  }
+  
+  /* Estilos de la lista de usuarios */
+  ion-list {
+    padding: 10px;
+    --background: #ffffff; /* Fondo blanco */
+  }
+  
+  /* Estilo de cada item de la lista */
+  ion-item {
+    --background: #ffffff; /* Fondo blanco para cada ítem */
+    --border-color: rgb(240, 141, 3) /* Borde de cada ítem */
+    border-bottom: 1px solid rgb(240, 141, 3);/* Línea sutil debajo de cada item */
+  }
+
+  /* Estilo de los inputs dentro de los ion-item */
+ion-input {
+    --background: #ffffff; /* Fondo blanco en los inputs */
+    --color: #060606; /* Texto oscuro en los inputs */
+    --placeholder-color: rgb(240, 141, 3); /* Placeholder naranja */
+  }
+  
+  /* Avatar de los usuarios */
+  ion-avatar {
+    border-radius: 50%;
+    border: 2px solid rgb(240, 141, 3); /* Borde naranja */
+    margin-right: 10px;
+  }
+  
+  /* Estilo de la etiqueta del nombre del usuario */
+  ion-label h2 {
+    color: #fefcfc; /* Texto oscuro para el nombre */
+  }
+  
+  /* Botón de seguir/desseguir */
+  ion-button {
+    --background: transparent; /* Fondo transparente */
+    --color: rgb(240, 141, 3); /* Icono de corazón en naranja */
+    --border-radius: 50%; /* Botón redondo */
+    --padding: 0;
+  }
+  
+  /* Icono del botón de seguir/desseguir */
+  ion-icon {
+    font-size: 24px;
+    color: rgb(240, 141, 3); /* Color naranja en los íconos */
+  }

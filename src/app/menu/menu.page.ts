@@ -32,13 +32,16 @@ export class MenuPage implements OnInit {
 
   account(){
     this.navCtrl.navigateRoot("menu/account"); // Ir al Perfil
+    this.closeMenu();
   }
 
   inicio(){
     this.navCtrl.navigateRoot("menu/home"); // Ir al Inicio
+    this.closeMenu();
   }
 
   search_user(){
     this.navCtrl.navigateRoot("menu/search-users"); // Busqueda de usuario
+    this.closeMenu();
   }
 }

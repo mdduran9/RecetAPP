@@ -1,0 +1,66 @@
+/* Estilo del Split Pane */
+ion-split-pane {
+    --background: #ffffff; /* Fondo blanco */
+  }
+  
+  /* Estilo del Menú */
+  ion-menu {
+    --background: #ef7f24; /* Fondo blanco */
+    --width: 250px; /* Ajustar el ancho del menú */
+    --border-right: 1px solid #FFA500; /* Borde derecho naranja */
+  }
+  
+  /* Estilo del Header del Menú */
+  ion-header {
+    --background:  #f0e6d3; /* Fondo naranja */ 
+    color: #ffffff; /* Texto blanco */
+  }
+  
+  /* Estilo de la Toolbar en el Header */
+  ion-toolbar {
+    --background: #f0e6d3; /* Fondo naranja */
+  }
+  
+  /* Estilo del título en el Header */
+  ion-title {
+    color: rgb(240, 141, 3); /* Título blanco */
+    font-weight: bold;
+  }
+  
+  /* Estilo de los botones del menú */
+  ion-buttons {
+    color: #ffffff; /* Color de los iconos de los botones */
+  }
+  
+  /* Estilo del contenido del menú */
+  ion-content {
+    --background: #ffffff; /* Fondo blanco */
+    padding: 0;
+  }
+  
+  /* Estilo de cada ítem en el menú */
+  ion-item {
+    --background: transparent; /* Fondo transparente */
+    --color: #333333; /* Texto oscuro para los elementos */
+    border-bottom: 1px solid #f0f0f0; /* Línea debajo de cada item */
+    padding: 15px 20px;
+    font-size: 16px;
+  }
+  
+  /* Estilo de los íconos del menú */
+  ion-icon {
+    font-size: 20px;
+    color: #FFA500; /* Iconos de color naranja */
+    margin-right: 15px; /* Espaciado entre el icono y el texto */
+  }
+  
+  /* Efecto hover para los ítems del menú */
+  ion-item:hover {
+    --background: #f0f0f0; /* Fondo gris claro al pasar el ratón */
+  }
+  
+  /* Estilo del botón de cierre del menú */
+  ion-button {
+    --background: transparent; /* Fondo transparente */
+    --color: #ffffff; /* Color blanco para el icono */
+  }

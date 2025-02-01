@@ -1,0 +1,67 @@
+.profile-header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    background-color: #ffffff; /* Fondo blanco */
+    padding: 20px; /* Opcional, agrega algo de espacio interior */
+    border-radius: 8px; /* Opcional, para bordes redondeados */
+  }
+  
+  .profile-avatar {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    border: 3px solid #ccc;
+    border-radius: 50%;
+  }
+  
+  
+
+  ion-content {
+    --background: #ffffff; /* Fondo blanco */
+  }
+
+  .white-background {
+    background-color: #ffffff;
+    --ion-background-color: #ffffff; /* Garantiza que las propiedades de Ionic también adopten este color */
+    padding: 0;
+    margin: 0;
+  }
+
+    .form {
+    background-color: #ffffff;;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgb(248, 247, 247);
+    width: 300px;
+  }
+
+  ion-item {
+    margin-bottom: 16px; /* Espacio entre los campos */
+    border-bottom: 2px solid rgb(240, 141, 3); /* Línea de separación naranja */
+    width: auto; /* Se ajusta al contenido del item */
+}
+
+.boton-naranja {
+    --background: rgb(240, 141, 3); /* Color de fondo naranja */
+    --color: white; /* Color de texto blanco */
+    --border-radius: 8px; /* Bordes redondeados */
+  }
+
+ion-input {
+    --padding-start: 16px;
+    --padding-end: 16px;
+    color: #040404;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombreado sutil */
+    border-radius: 8px; /* Bordes redondeados */
+  }
+  
+  ion-label {
+    font-size: 14px;
+  }
+
+  ion-button{
+    --background: rgb(240, 141, 3); /* Color de fondo naranja */
+    --color: white; /* Color de texto blanco */
+    --border-radius: 8px; /* Bordes redondeados */
+  }

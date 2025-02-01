@@ -4,7 +4,8 @@ import { defineCustomElements} from '@ionic/pwa-elements/loader';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { PostService } from '../services/post.service';
 import { Storage } from '@ionic/storage-angular';
-import { ModalController } from '@ionic/angular';
+import { ModalController, AlertController, NavController} from '@ionic/angular';
+import { UserService } from '../services/user.service';
 defineCustomElements(window);
 
 @Component({
@@ -21,7 +22,8 @@ export class AddPostModalPage implements OnInit {
     private formBuilder: FormBuilder,
     private postService: PostService,
     private storage: Storage,
-    private modalController: ModalController
+    private modalController: ModalController,
+    private navCtrl: NavController
   ){
     this.addPostForm = this.formBuilder.group({
       description : new FormControl('',Validators.required),
@@ -68,7 +70,15 @@ export class AddPostModalPage implements OnInit {
     this.postService.createPosts(post_params).then(
       (data:any)=>{
         console.log(data,'post creado');
-        this.modalController.dismiss({null:null});
+        data.user = {
+          id: user.id,
+          name: user.name,
+          image: user.image || 'assets/imgs/perfil.png'
+        };
+        this.postService.postCreated.emit(data);
+        this.addPostForm.reset();
+        this.post_image = null;
+        this.modalController.dismiss(); 
       },
       (error) => {
         console.log('Error en la creación del post:', error)
@@ -76,4 +86,10 @@ export class AddPostModalPage implements OnInit {
     )
   }
 
+  goBack() {
+    console.log('Regresa');
+    this.modalController.dismiss();  // Cierra el modal
+    this.navCtrl.navigateRoot('menu/home');  // Navega hacia la cuenta
+    console.log('');
+  }
 }

@@ -1,0 +1,77 @@
+/* Estilo del contenido */
+ion-content {
+    --background: #ffffff; /* Fondo blanco */
+    padding: 15px; /* Espaciado general */
+  }
+  
+  /* Estilo del contenedor de la imagen */
+  .image-container {
+    display: flex;
+   --justify-content: center; /* Centra horizontalmente */
+    --align-items: center; /* Centra verticalmente */
+   --align-content: center; /* Asegura que el contenido se alinee correctamente */
+    border: 2px dashed rgb(240, 141, 3); /* Borde naranja */
+    margin-bottom: 20px;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%; /* Asegura que el contenedor ocupe todo el espacio disponible */
+    min-height: 200px; /* Puedes ajustar el alto mínimo */
+  }
+  
+  /* Estilo de la imagen */
+  .image-post {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Bordes redondeados para la imagen */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+  }
+  
+  /* Texto dentro del contenedor de la imagen */
+  .upload-text {
+    color: rgb(240, 141, 3); /* Texto en naranja */
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  /* Estilos para el textarea */
+  ion-textarea {
+    --background: #ffffff; /* Fondo blanco */
+    --color: #333333; /* Color de texto oscuro */
+    --placeholder-color: rgb(240, 141, 3); /* Placeholder naranja */
+    --border-color: rgb(240, 141, 3); /* Borde naranja */
+    padding: 10px; /* Espaciado interno */
+  }
+  
+  /* Estilo del botón de publicar */
+  .publish-button {
+    --background: rgb(240, 141, 3); /* Fondo naranja */
+    --color: white; /* Texto blanco */
+    --border-radius: 20px; /* Bordes redondeados */
+    margin-top: 20px;
+    font-weight: bold;
+    text-transform: uppercase; /* Texto en mayúsculas */
+  }
+  
+  /* Estilo del header */
+  ion-toolbar {
+    --background: rgb(240, 141, 3); /* Naranja */
+    --color: white; /* Texto blanco */
+  }
+  
+  ion-title {
+    --color: white; /* Título blanco */
+  }
+  
+  /* Estilo del botón de regreso */
+  ion-button {
+    --color: white; /* Icono del botón en blanco */
+  }
+  
+  /* Estilo del item en el formulario */
+  ion-item {
+    --background: #ffffff; /* Fondo blanco */
+    border-bottom: 1px solid rgb(240, 141, 3); /* Borde inferior naranja */
+    margin-bottom: 15px;
+  }

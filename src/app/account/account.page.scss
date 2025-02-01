@@ -39,3 +39,23 @@
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para efecto elevado */
     border-radius: 50%; /* Asegurar que sea completamente redondo */
   }
+
+  /* Estilos del header */
+  ion-header {
+    --background: rgb(240, 141, 3); /* Naranja */
+    color: #ffffff; /* Texto blanco */
+  }
+  
+  ion-toolbar {
+    --background: rgb(240, 141, 3); /* Naranja */
+  }
+  
+  /* Estilos del título en el header */
+  ion-title {
+    color: #ffffff; /* Título blanco */
+  }
+  
+  /* Botón del menú en el header */
+  ion-menu-button {
+    color: #ffffff; /* Botón del menú blanco */
+  }

@@ -13,8 +13,9 @@
       placeholder="Buscar Usuarios..."
       (ionInput)="searchUsers($event)"></ion-searchbar>
   </ion-toolbar>
+  
   <ion-list>
-    <ion-item *ngFor="let user of users">
+    <ion-item *ngFor="let user of users" color="white">
       <ion-avatar slot="start">
         <img [src]="user.image || 'assets/imgs/perfil.png' ">
       </ion-avatar>

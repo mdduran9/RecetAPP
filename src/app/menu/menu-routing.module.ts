@@ -27,6 +27,7 @@ const routes: Routes = [
         path: 'update-user-modal',
         loadChildren: () => import('../update-user-modal/update-user-modal.module').then( m => m.UpdateUserModalPageModule)
       },
+      
     ]
   }
 ];

@@ -1,0 +1,74 @@
+/* Estilos del header */
+ion-header {
+    --background: rgb(240, 141, 3); /* Naranja */
+    color: #ffffff; /* Texto blanco */
+  }
+  
+  ion-toolbar {
+    --background: rgb(240, 141, 3); /* Naranja */
+  }
+  
+  /* Estilos del título en el header */
+  ion-title {
+    color: #ffffff; /* Título blanco */
+  }
+  
+  /* Botón del menú en el header */
+  ion-menu-button {
+    color: #ffffff; /* Botón del menú blanco */
+  }
+
+  ion-content {
+    --background: #ffffff; /* Fondo blanco */
+  }
+
+  .boton-naranja {
+    --background: rgb(240, 141, 3); /* Color de fondo naranja */
+    --color: white; /* Color de texto blanco */
+    --border-radius: 8px; /* Bordes redondeados */
+  }
+
+  ion-item {
+    margin-bottom: 16px; /* Espacio entre los campos */
+    border-bottom: 2px solid rgb(240, 141, 3); /* Línea de separación naranja */
+    width: auto; /* Se ajusta al contenido del item */
+}
+
+ion-input {
+    --padding-start: 16px;
+    --padding-end: 16px;
+    color: #040404;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombreado sutil */
+    border-radius: 8px; /* Bordes redondeados */
+  }
+  
+  ion-label {
+    font-size: 14px;
+  }
+  
+  ion-button {
+    margin-top: 16px; /* Espacio entre los botones */
+  }
+
+  .form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    width: 300px;
+  }
+
+  a {
+    color: #FFA500; /* Color naranja para el enlace */
+    text-decoration: none; /* Quitar subrayado */
+    text-align: center; /* Centrado del texto */
+  }
+  
+  a:hover {
+    text-decoration: underline; /* Subrayado cuando se pasa el mouse */
+  }
+
+  p {
+    color: #080808; /* Color naranja para el enlace */
+    text-align: center; /* Centrado del texto */
+  }

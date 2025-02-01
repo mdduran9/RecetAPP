@@ -7,7 +7,7 @@
 <ion-content>
   <form [formGroup]="registerForm" (ngSubmit)="registerUser(registerForm.value)">
     <!-- Campo Nombre -->
-    <ion-item>
+    <ion-item color="white">
       <ion-input label="Nombre" placeholder="Enter text" formControlName="name"></ion-input>
     </ion-item>
     <ng-container *ngFor="let error of formErrors.name">
@@ -18,7 +18,7 @@
     </ng-container>
 
     <!-- Campo Apellido -->
-    <ion-item>
+    <ion-item color="white">
       <ion-input label="Apellido" placeholder="Enter text" formControlName="lastname"></ion-input>
     </ion-item>
     <ng-container *ngFor="let error of formErrors.lastname">
@@ -29,7 +29,7 @@
     </ng-container>
 
     <!-- Campo Email -->
-    <ion-item>
+    <ion-item color="white">
       <ion-input label="Email" labelPlacement="floating" placeholder="example@email.com" formControlName="email"></ion-input>
     </ion-item>
     <ng-container *ngFor="let error of formErrors.email">
@@ -40,7 +40,7 @@
     </ng-container>
     
     <!-- Campo Nombre de Usuario -->
-    <ion-item>
+    <ion-item color="white">
       <ion-input label="Nombre de usuario" placeholder="Enter text" formControlName="username"></ion-input>
     </ion-item>
     <ng-container *ngFor="let error of formErrors.username">
@@ -51,7 +51,7 @@
     </ng-container>
 
      <!-- Campo Contraseña -->
-    <ion-item>
+    <ion-item color="white">
       <ion-input type="password" label="Contraseña" placeholder="" formControlName="password">
         <ion-input-password-toggle slot="end"></ion-input-password-toggle>
       </ion-input>
@@ -64,7 +64,7 @@
     </ng-container>
 
     <!-- Campo Confirmar Contraseña -->
-    <ion-item>
+    <ion-item color="white">
       <ion-input type="confirm_password" label="Confirmar Contraseña" placeholder="" formControlName="confirm_password">
         <ion-input-password-toggle slot="end"></ion-input-password-toggle>
       </ion-input>
@@ -84,8 +84,14 @@
       type="submit"
       [disabled]="!registerForm.valid"
       expand="block"
+      class="boton-naranja"
       >Registro
     </ion-button>
+
   </form>
+  
+    <p></p>
+    <p>Ya tienes una cuenta? <a href="login">Entra aquí!</a></p>
+  
   
 </ion-content>

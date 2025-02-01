@@ -1,11 +1,17 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Editar perfil</ion-title>
+  <ion-toolbar color="light">
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Editar Perfil</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <form [formGroup]="updateAccountForm" (ngSubmit)="updateUser(updateAccountForm.value)">
+
+<ion-content class="white-background" >
+  <form [formGroup]="updateAccountForm" (ngSubmit)="updateUser(updateAccountForm.value)" style="background-color: #ffffff;">
 
     <div class="profile-header" style="text-align: center; margin-bottom: 20px;">
       <ion-avatar (click)="presentPhotoOptions()" style="width: 120px; height: 120px; margin: 0 auto;">
@@ -14,8 +20,7 @@
   
     </div>
     
-
-    <ion-item>
+    <ion-item color="white">
       <ion-input label="Email"  labelPlacement="floating" placeholder="example@gmail.com" formControlName="email">
       </ion-input>
     </ion-item>
@@ -25,7 +30,7 @@
     </ng-container>
 
 
-    <ion-item>
+    <ion-item color="white">
       <ion-input label="Name" labelPlacement="floating" placeholder="Name" formControlName="name">
       </ion-input>
     </ion-item>
@@ -34,7 +39,7 @@
        *ngIf="(updateAccountForm.get('name')?.hasError(error.type) && updateAccountForm.get('name')?.dirty)">{{error.message}}</ion-label>
     </ng-container>
 
-    <ion-item>
+    <ion-item color="white">
       <ion-input label="Last name" labelPlacement="floating" placeholder="Last Name" formControlName="lastname">
       </ion-input>
     </ion-item>
@@ -45,7 +50,9 @@
 
 
 
-    <ion-button expand="full" type="submit" [disabled]="updateAccountForm.invalid">Update</ion-button>
+    <ion-button expand="full" type="submit" [disabled]="updateAccountForm.invalid"
+    class="boton-naranja"
+    > Actualizar</ion-button>
     
     
 
