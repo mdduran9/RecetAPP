@@ -37,6 +37,7 @@ export class AccountPage implements OnInit {
       console.log(data);
       this.storage.set('user',data); //Se actualizan los datos cada vez que se entre a la pagina de la cuenta
       this.user_data = data;
+      this.update();
     },
     ).catch(err =>{
       console.log('Error');

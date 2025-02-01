@@ -53,11 +53,11 @@ export class UpdateUserModalPage implements OnInit {
              email: new FormControl(''),
              name: new FormControl('', Validators.compose([
                Validators.required,
-               Validators.minLength(4)
+               Validators.minLength(2)
              ])),
              lastname: new FormControl('', Validators.compose([
                Validators.required,
-               Validators.minLength(4)
+               Validators.minLength(2)
              ]))
           
            });
@@ -67,7 +67,7 @@ export class UpdateUserModalPage implements OnInit {
    goBack() {
     console.log('Regresa');
     this.modalController.dismiss();  // Cierra el modal
-    this.navCtrl.navigateRoot('menu/account');  // Navega hacia la cuenta
+    this.navCtrl.navigateRoot('menu/home');  // Navega hacia la cuenta
     console.log('');
   }
 
